@@ -19,7 +19,7 @@ An interactive 3D interior design tool built with **Three.js**, runs directly in
 
 1. 克隆仓库：
 ```bash
-git clone https://github.com/YOUR_USERNAME/3d-interior-design.git
+git clone https://github.com/kennyjeanxu/3d-interior-design.git
 ```
 
 2. 直接用浏览器打开 `index.html` 即可使用。
