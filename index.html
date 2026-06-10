@@ -28,10 +28,9 @@
     -webkit-user-select: none;
   }
 
-  /* ========== Sidebar ========== */
   #sidebar {
-    width: 280px;
-    min-width: 280px;
+    width: 290px;
+    min-width: 290px;
     background: var(--panel-bg);
     display: flex;
     flex-direction: column;
@@ -40,7 +39,6 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
-
   #sidebar::-webkit-scrollbar { width: 4px; }
   #sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
@@ -48,187 +46,96 @@
     padding: 20px 20px 12px;
     border-bottom: 1px solid var(--border);
   }
-  .sidebar-header h1 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 0.5px;
-  }
-  .sidebar-header .subtitle {
-    font-size: 12px;
-    color: var(--text-secondary);
-    margin-top: 2px;
-  }
+  .sidebar-header h1 { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: 0.5px; }
+  .sidebar-header .subtitle { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
 
-  .section {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-  }
+  .section { padding: 14px 20px; border-bottom: 1px solid var(--border); }
   .section-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 12px; font-weight: 600; color: var(--text-secondary);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
   }
-  .section-title .icon { font-size: 16px; }
+  .section-title .icon { font-size: 15px; }
 
-  /* Furniture grid */
-  .furniture-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
+  .furniture-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
   .furniture-item {
-    aspect-ratio: 1;
-    background: var(--bg);
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    transition: all 0.2s;
-    font-size: 24px;
-    color: var(--text-secondary);
+    aspect-ratio: 1; background: var(--bg); border: 2px solid var(--border);
+    border-radius: 10px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    transition: all 0.2s; font-size: 22px; color: var(--text-secondary);
   }
   .furniture-item:hover {
-    border-color: var(--accent);
-    background: var(--hover);
-    color: var(--text);
-    transform: translateY(-2px);
+    border-color: var(--accent); background: var(--hover); color: var(--text); transform: translateY(-2px);
   }
   .furniture-item.active {
-    border-color: var(--selected);
-    background: rgba(233, 68, 96, 0.15);
-    color: var(--selected);
-    box-shadow: 0 0 12px rgba(233, 68, 96, 0.3);
+    border-color: var(--selected); background: rgba(233,68,96,0.15);
+    color: var(--selected); box-shadow: 0 0 12px rgba(233,68,96,0.3);
   }
-  .furniture-item .label {
-    font-size: 10px;
-    font-weight: 500;
-  }
+  .furniture-item .label { font-size: 10px; font-weight: 500; }
 
-  /* Color pickers */
   .color-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 7px;
   }
   .color-row:last-child { margin-bottom: 0; }
-  .color-row label {
-    font-size: 12px;
-    color: var(--text);
-    flex: 1;
-  }
+  .color-row label { font-size: 12px; color: var(--text); flex: 1; }
   .color-row input[type="color"] {
-    width: 36px;
-    height: 28px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    cursor: pointer;
-    background: transparent;
-    padding: 2px;
+    width: 34px; height: 26px; border: 1px solid var(--border);
+    border-radius: 5px; cursor: pointer; background: transparent; padding: 2px;
   }
 
-  /* Tool buttons */
+  /* Style toggle buttons */
+  .style-toggle-group { display: flex; gap: 4px; margin-top: 6px; }
+  .style-toggle {
+    flex: 1; padding: 6px 4px; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; color: var(--text-secondary); cursor: pointer;
+    font-size: 11px; font-weight: 500; transition: all 0.2s; text-align: center;
+  }
+  .style-toggle:hover { border-color: var(--accent); color: var(--text); }
+  .style-toggle.active {
+    background: rgba(233,68,96,0.15); border-color: var(--accent); color: var(--accent);
+  }
+
   .tool-btn {
-    width: 100%;
-    padding: 10px 16px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    transition: all 0.2s;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    width: 100%; padding: 9px 14px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+    cursor: pointer; font-size: 12px; font-weight: 500; transition: all 0.2s;
+    margin-bottom: 5px; display: flex; align-items: center; gap: 8px;
   }
   .tool-btn:last-child { margin-bottom: 0; }
-  .tool-btn:hover {
-    background: var(--hover);
-    border-color: var(--accent);
-  }
-  .tool-btn.danger:hover {
-    background: rgba(233, 68, 96, 0.2);
-    border-color: var(--accent);
-  }
-  .tool-btn.toggle-on {
-    background: rgba(233, 68, 96, 0.15);
-    border-color: var(--accent);
-  }
+  .tool-btn:hover { background: var(--hover); border-color: var(--accent); }
+  .tool-btn.danger:hover { background: rgba(233,68,96,0.2); border-color: var(--accent); }
+  .tool-btn.toggle-on { background: rgba(233,68,96,0.15); border-color: var(--accent); }
 
-  /* Info bar */
   .info-bar {
-    padding: 12px 20px;
-    font-size: 11px;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border);
-    margin-top: auto;
+    padding: 12px 20px; font-size: 11px; color: var(--text-secondary);
+    border-top: 1px solid var(--border); margin-top: auto;
   }
-  .info-bar .status {
-    color: var(--accent);
-    font-weight: 500;
-  }
+  .info-bar .status { color: var(--accent); font-weight: 500; }
 
-  /* ========== Canvas ========== */
-  #canvas-container {
-    flex: 1;
-    position: relative;
-    cursor: grab;
-  }
+  #canvas-container { flex: 1; position: relative; cursor: grab; }
   #canvas-container:active { cursor: grabbing; }
   #canvas-container.placing { cursor: crosshair; }
   #canvas-container.placing:active { cursor: crosshair; }
-
   #canvas-container canvas { display: block; }
 
-  /* Tooltip */
   #tooltip {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 13px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-    white-space: nowrap;
+    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: rgba(0,0,0,0.8); color: #fff; padding: 8px 20px;
+    border-radius: 20px; font-size: 13px; pointer-events: none;
+    opacity: 0; transition: opacity 0.3s; white-space: nowrap;
   }
   #tooltip.visible { opacity: 1; }
 
-  /* Responsive */
   @media (max-width: 768px) {
     body { flex-direction: column; }
-    #sidebar {
-      width: 100%;
-      min-width: unset;
-      max-height: 40vh;
-      flex-shrink: 0;
-    }
-    #canvas-container { height: 60vh; }
+    #sidebar { width: 100%; min-width: unset; max-height: 42vh; flex-shrink: 0; }
+    #canvas-container { height: 58vh; }
     .furniture-grid { grid-template-columns: repeat(4, 1fr); }
   }
 </style>
 </head>
 <body>
 
-<!-- Sidebar -->
 <div id="sidebar">
   <div class="sidebar-header">
     <h1>🏠 3D 室内设计</h1>
@@ -238,33 +145,18 @@
   <div class="section">
     <div class="section-title"><span class="icon">🛋️</span> 家具 / Furniture</div>
     <div class="furniture-grid" id="furniture-grid">
-      <div class="furniture-item" data-type="sofa">
-        <span>🛋️</span><span class="label">沙发</span>
-      </div>
-      <div class="furniture-item" data-type="coffee-table">
-        <span>☕</span><span class="label">茶几</span>
-      </div>
-      <div class="furniture-item" data-type="dining-table">
-        <span>🍽️</span><span class="label">餐桌</span>
-      </div>
-      <div class="furniture-item" data-type="chair">
-        <span>🪑</span><span class="label">椅子</span>
-      </div>
-      <div class="furniture-item" data-type="bed">
-        <span>🛏️</span><span class="label">床</span>
-      </div>
-      <div class="furniture-item" data-type="bookshelf">
-        <span>📚</span><span class="label">书架</span>
-      </div>
-      <div class="furniture-item" data-type="floor-lamp">
-        <span>💡</span><span class="label">落地灯</span>
-      </div>
-      <div class="furniture-item" data-type="rug">
-        <span>🧶</span><span class="label">地毯</span>
-      </div>
-      <div class="furniture-item" data-type="tv-stand">
-        <span>📺</span><span class="label">电视柜</span>
-      </div>
+      <div class="furniture-item" data-type="sofa"><span>🛋️</span><span class="label">沙发</span></div>
+      <div class="furniture-item" data-type="coffee-table"><span>☕</span><span class="label">茶几</span></div>
+      <div class="furniture-item" data-type="dining-table"><span>🍽️</span><span class="label">餐桌</span></div>
+      <div class="furniture-item" data-type="chair"><span>🪑</span><span class="label">椅子</span></div>
+      <div class="furniture-item" data-type="bed"><span>🛏️</span><span class="label">床</span></div>
+      <div class="furniture-item" data-type="bookshelf"><span>📚</span><span class="label">书架</span></div>
+      <div class="furniture-item" data-type="floor-lamp"><span>💡</span><span class="label">落地灯</span></div>
+      <div class="furniture-item" data-type="rug"><span>🧶</span><span class="label">地毯</span></div>
+      <div class="furniture-item" data-type="tv-stand"><span>📺</span><span class="label">电视柜</span></div>
+      <div class="furniture-item" data-type="plant"><span>🌿</span><span class="label">盆栽</span></div>
+      <div class="furniture-item" data-type="wall-art"><span>🖼️</span><span class="label">挂画</span></div>
+      <div class="furniture-item" data-type="curtain"><span>🪟</span><span class="label">窗帘</span></div>
     </div>
   </div>
 
@@ -280,24 +172,33 @@
     </div>
     <div class="color-row">
       <label>天花板颜色</label>
-      <input type="color" id="ceiling-color" value="#ffffff">
+      <input type="color" id="ceiling-color" value="#fafaf8">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">🪵</span> 地板样式 / Floor Style</div>
+    <div class="style-toggle-group" id="floor-style-group">
+      <button class="style-toggle active" data-style="wood">🪵 木地板</button>
+      <button class="style-toggle" data-style="tile">🔲 瓷砖</button>
+      <button class="style-toggle" data-style="solid">🎨 纯色</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">🧱</span> 墙壁纹理 / Wall Texture</div>
+    <div class="style-toggle-group" id="wall-style-group">
+      <button class="style-toggle active" data-style="smooth">✨ 光滑</button>
+      <button class="style-toggle" data-style="textured">🧵 纹理</button>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title"><span class="icon">🔧</span> 工具 / Tools</div>
-    <button class="tool-btn" id="btn-rotate" title="按 R 键旋转家具">
-      🔄 旋转家具 (R键)
-    </button>
-    <button class="tool-btn" id="btn-delete" title="删除选中的家具">
-      🗑️ 删除选中 (Delete)
-    </button>
-    <button class="tool-btn" id="btn-grid" title="显示/隐藏网格">
-      📐 网格参考线
-    </button>
-    <button class="tool-btn danger" id="btn-clear">
-      ⚠️ 清空所有家具
-    </button>
+    <button class="tool-btn" id="btn-rotate">🔄 旋转家具 (R键)</button>
+    <button class="tool-btn" id="btn-delete">🗑️ 删除选中 (Delete)</button>
+    <button class="tool-btn" id="btn-grid">📐 网格参考线</button>
+    <button class="tool-btn danger" id="btn-clear">⚠️ 清空所有家具</button>
   </div>
 
   <div class="info-bar">
@@ -306,7 +207,6 @@
   </div>
 </div>
 
-<!-- 3D Canvas -->
 <div id="canvas-container">
   <div id="tooltip">点击地板放置家具 | 右键旋转视角 | 滚轮缩放</div>
 </div>
@@ -333,11 +233,413 @@ const furnitureGrid = document.getElementById('furniture-grid');
 const wallColorInput = document.getElementById('wall-color');
 const floorColorInput = document.getElementById('floor-color');
 const ceilingColorInput = document.getElementById('ceiling-color');
+const floorStyleGroup = document.getElementById('floor-style-group');
+const wallStyleGroup = document.getElementById('wall-style-group');
+
+// ==================== Procedural Texture Generation ====================
+function generateWoodTexture(baseColor = '#c4a882', plankW = 512, plankH = 64, numPlanks = 8) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext('2d');
+
+  // Base fill
+  ctx.fillStyle = baseColor;
+  ctx.fillRect(0, 0, 512, 512);
+
+  // Draw horizontal planks
+  const plankHeight = 512 / numPlanks;
+  for (let i = 0; i < numPlanks; i++) {
+    const y = i * plankHeight;
+    // Plank base with slight color variation
+    const r = parseInt(baseColor.slice(1,3), 16);
+    const g = parseInt(baseColor.slice(3,5), 16);
+    const b = parseInt(baseColor.slice(5,7), 16);
+    const v = 0.92 + Math.random() * 0.16;
+    ctx.fillStyle = `rgb(${Math.floor(r*v)},${Math.floor(g*v)},${Math.floor(b*v)})`;
+    ctx.fillRect(0, y, 512, plankHeight - 2);
+
+    // Wood grain lines within each plank
+    for (let g = 0; g < 8; g++) {
+      const gy = y + Math.random() * plankHeight;
+      ctx.strokeStyle = `rgba(${Math.floor(r*0.7)},${Math.floor(g*0.7)},${Math.floor(b*0.7)},${0.08 + Math.random() * 0.12})`;
+      ctx.lineWidth = 0.5 + Math.random() * 2;
+      ctx.beginPath();
+      ctx.moveTo(0, gy);
+      for (let x = 0; x < 512; x += 20) {
+        ctx.lineTo(x, gy + Math.sin(x * 0.02 + i) * (1 + Math.random() * 2));
+      }
+      ctx.stroke();
+    }
+
+    // Plank gap
+    ctx.fillStyle = 'rgba(0,0,0,0.15)';
+    ctx.fillRect(0, y + plankHeight - 2, 512, 2);
+  }
+
+  // Add some knot details
+  for (let k = 0; k < 3; k++) {
+    const kx = 50 + Math.random() * 412;
+    const ky = 30 + Math.random() * 452;
+    const kr = 4 + Math.random() * 10;
+    ctx.fillStyle = 'rgba(80,50,20,0.3)';
+    ctx.beginPath();
+    ctx.ellipse(kx, ky, kr, kr * 0.6, Math.random() * Math.PI, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = 'rgba(60,35,10,0.4)';
+    ctx.beginPath();
+    ctx.ellipse(kx, ky, kr * 0.4, kr * 0.25, 0, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+function generateTileTexture(baseColor = '#e8e0d5', tileSize = 128) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext('2d');
+
+  const tilesX = 512 / tileSize;
+  const tilesY = 512 / tileSize;
+
+  ctx.fillStyle = '#888888';
+  ctx.fillRect(0, 0, 512, 512);
+
+  for (let i = 0; i < tilesX; i++) {
+    for (let j = 0; j < tilesY; j++) {
+      const x = i * tileSize + 1;
+      const y = j * tileSize + 1;
+      const w = tileSize - 2;
+      const h = tileSize - 2;
+
+      const r = parseInt(baseColor.slice(1,3), 16);
+      const g = parseInt(baseColor.slice(3,5), 16);
+      const b = parseInt(baseColor.slice(5,7), 16);
+      const v = 0.88 + Math.random() * 0.24;
+
+      ctx.fillStyle = `rgb(${Math.floor(r*v)},${Math.floor(g*v)},${Math.floor(b*v)})`;
+      ctx.fillRect(x, y, w, h);
+
+      // Subtle speckle
+      for (let s = 0; s < 30; s++) {
+        const sx = x + Math.random() * w;
+        const sy = y + Math.random() * h;
+        ctx.fillStyle = `rgba(${r},${g},${b},${0.03 + Math.random() * 0.06})`;
+        ctx.fillRect(sx, sy, 2, 2);
+      }
+    }
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+function generateWoodGrainTexture(baseColor = '#8B6914', orientation = 'horizontal') {
+  const canvas = document.createElement('canvas');
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext('2d');
+
+  const r = parseInt(baseColor.slice(1,3), 16);
+  const g = parseInt(baseColor.slice(3,5), 16);
+  const b = parseInt(baseColor.slice(5,7), 16);
+
+  ctx.fillStyle = baseColor;
+  ctx.fillRect(0, 0, 256, 256);
+
+  // Grain lines
+  for (let i = 0; i < 40; i++) {
+    const pos = Math.random() * 256;
+    ctx.strokeStyle = `rgba(${Math.floor(r*0.7)},${Math.floor(g*0.7)},${Math.floor(b*0.7)},${0.08 + Math.random() * 0.15})`;
+    ctx.lineWidth = 0.5 + Math.random() * 3;
+    ctx.beginPath();
+    if (orientation === 'horizontal') {
+      ctx.moveTo(0, pos);
+      for (let x = 0; x < 256; x += 10) {
+        ctx.lineTo(x, pos + Math.sin(x * 0.03) * (2 + Math.random() * 4));
+      }
+    } else {
+      ctx.moveTo(pos, 0);
+      for (let y = 0; y < 256; y += 10) {
+        ctx.lineTo(pos + Math.sin(y * 0.03) * (2 + Math.random() * 4), y);
+      }
+    }
+    ctx.stroke();
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+function generateFabricTexture(baseColor = '#D4C5B9') {
+  const canvas = document.createElement('canvas');
+  canvas.width = 128;
+  canvas.height = 128;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = baseColor;
+  ctx.fillRect(0, 0, 128, 128);
+
+  // Woven pattern
+  const threadSize = 4;
+  for (let x = 0; x < 128; x += threadSize) {
+    for (let y = 0; y < 128; y += threadSize) {
+      const alt = (Math.floor(x / threadSize) + Math.floor(y / threadSize)) % 2;
+      ctx.fillStyle = alt
+        ? 'rgba(255,255,255,0.03)'
+        : 'rgba(0,0,0,0.03)';
+      ctx.fillRect(x, y, threadSize, threadSize);
+    }
+  }
+
+  // Subtle noise
+  for (let i = 0; i < 200; i++) {
+    ctx.fillStyle = `rgba(0,0,0,${0.01 + Math.random() * 0.03})`;
+    ctx.fillRect(Math.random() * 128, Math.random() * 128, 2, 2);
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+function generateRugTexture() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext('2d');
+
+  // Base
+  ctx.fillStyle = '#C4956A';
+  ctx.fillRect(0, 0, 512, 512);
+
+  // Geometric border pattern
+  const margin = 30;
+  // Outer border
+  ctx.strokeStyle = '#8B5E3C';
+  ctx.lineWidth = 8;
+  ctx.strokeRect(margin, margin, 512 - margin * 2, 512 - margin * 2);
+
+  // Inner border
+  ctx.strokeStyle = '#6B3A2A';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(margin + 15, margin + 15, 512 - (margin + 15) * 2, 512 - (margin + 15) * 2);
+
+  // Diamond pattern center
+  const cx = 256, cy = 256;
+  ctx.fillStyle = '#A0785A';
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - 150);
+  ctx.lineTo(cx + 120, cy);
+  ctx.lineTo(cx, cy + 150);
+  ctx.lineTo(cx - 120, cy);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.fillStyle = '#8B6040';
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - 80);
+  ctx.lineTo(cx + 60, cy);
+  ctx.lineTo(cx, cy + 80);
+  ctx.lineTo(cx - 60, cy);
+  ctx.closePath();
+  ctx.fill();
+
+  // Corner ornaments
+  const corners = [[margin+25, margin+25], [512-margin-25, margin+25], [margin+25, 512-margin-25], [512-margin-25, 512-margin-25]];
+  corners.forEach(([cx2, cy2]) => {
+    ctx.fillStyle = '#7A4A30';
+    ctx.beginPath();
+    ctx.arc(cx2, cy2, 18, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#5A3020';
+    ctx.beginPath();
+    ctx.arc(cx2, cy2, 8, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+function generateMarbleTexture(baseColor = '#f0ece4') {
+  const canvas = document.createElement('canvas');
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = baseColor;
+  ctx.fillRect(0, 0, 256, 256);
+
+  // Vein patterns
+  for (let i = 0; i < 15; i++) {
+    const startX = Math.random() * 256;
+    const startY = Math.random() * 256;
+    ctx.strokeStyle = `rgba(180,175,170,${0.1 + Math.random() * 0.25})`;
+    ctx.lineWidth = 0.3 + Math.random() * 2.5;
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    let x = startX, y = startY;
+    for (let j = 0; j < 20; j++) {
+      x += (Math.random() - 0.5) * 30;
+      y += (Math.random() - 0.5) * 30;
+      ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+function generateWallpaperTexture(baseColor = '#f5f0e8') {
+  const canvas = document.createElement('canvas');
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = baseColor;
+  ctx.fillRect(0, 0, 256, 256);
+
+  // Subtle stripe/damask pattern
+  const r = parseInt(baseColor.slice(1,3), 16);
+  const g = parseInt(baseColor.slice(3,5), 16);
+  const b = parseInt(baseColor.slice(5,7), 16);
+
+  // Vertical stripes
+  for (let x = 0; x < 256; x += 32) {
+    ctx.fillStyle = `rgba(${r},${g},${b},0.04)`;
+    ctx.fillRect(x, 0, 16, 256);
+  }
+
+  // Subtle texture speckle
+  for (let i = 0; i < 500; i++) {
+    ctx.fillStyle = `rgba(0,0,0,${0.01 + Math.random() * 0.025})`;
+    ctx.fillRect(Math.random() * 256, Math.random() * 256, 1.5, 1.5);
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+function generateArtTexture() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 256;
+  canvas.height = 320;
+  const ctx = canvas.getContext('2d');
+
+  // Sky gradient
+  const skyGrad = ctx.createLinearGradient(0, 0, 0, 180);
+  skyGrad.addColorStop(0, '#87CEEB');
+  skyGrad.addColorStop(0.5, '#B0D4E8');
+  skyGrad.addColorStop(1, '#E8D8B0');
+  ctx.fillStyle = skyGrad;
+  ctx.fillRect(0, 0, 256, 320);
+
+  // Mountains
+  ctx.fillStyle = '#6B8E6B';
+  ctx.beginPath();
+  ctx.moveTo(0, 200);
+  ctx.lineTo(40, 130);
+  ctx.lineTo(100, 190);
+  ctx.lineTo(140, 100);
+  ctx.lineTo(200, 180);
+  ctx.lineTo(256, 140);
+  ctx.lineTo(256, 320);
+  ctx.lineTo(0, 320);
+  ctx.closePath();
+  ctx.fill();
+
+  // Foreground hills
+  ctx.fillStyle = '#4A7A4A';
+  ctx.beginPath();
+  ctx.moveTo(0, 250);
+  ctx.lineTo(80, 210);
+  ctx.lineTo(150, 260);
+  ctx.lineTo(220, 220);
+  ctx.lineTo(256, 250);
+  ctx.lineTo(256, 320);
+  ctx.lineTo(0, 320);
+  ctx.closePath();
+  ctx.fill();
+
+  // Sun
+  ctx.fillStyle = '#FFF8DC';
+  ctx.beginPath();
+  ctx.arc(190, 100, 25, 0, Math.PI * 2);
+  ctx.fill();
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearMipmapLinearFilter;
+  tex.generateMipmaps = true;
+  return tex;
+}
+
+// Generate all textures
+const textures = {
+  woodFloor: generateWoodTexture('#c4a882'),
+  tileFloor: generateTileTexture('#e8e0d5'),
+  woodGrain: generateWoodGrainTexture('#8B6914', 'horizontal'),
+  darkWoodGrain: generateWoodGrainTexture('#5D3A1A', 'horizontal'),
+  fabric: generateFabricTexture('#D4C5B9'),
+  fabricBlue: generateFabricTexture('#5B7FA5'),
+  fabricGreen: generateFabricTexture('#7A9A7E'),
+  rug: generateRugTexture(),
+  marble: generateMarbleTexture('#f0ece4'),
+  wallpaper: generateWallpaperTexture('#f5f0e8'),
+  art: generateArtTexture(),
+};
 
 // ==================== Scene Setup ====================
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#1a1a2e');
-scene.fog = new THREE.Fog('#1a1a2e', 8, 30);
+scene.fog = new THREE.Fog('#1a1a2e', 10, 35);
 
 const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.5, 50);
 camera.position.set(8, 5, 8);
@@ -349,15 +651,19 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.2;
+renderer.toneMappingExposure = 1.1;
 container.appendChild(renderer.domElement);
 
 // ==================== Lighting ====================
-const ambientLight = new THREE.AmbientLight('#ffffff', 1.0);
+// Hemisphere: sky + ground ambient
+const hemiLight = new THREE.HemisphereLight('#d4e4ff', '#8B7355', 0.7);
+scene.add(hemiLight);
+
+const ambientLight = new THREE.AmbientLight('#ffffff', 0.5);
 scene.add(ambientLight);
 
-const sunLight = new THREE.DirectionalLight('#ffffff', 3.5);
-sunLight.position.set(5, 8, 3);
+const sunLight = new THREE.DirectionalLight('#fff8ec', 4.0);
+sunLight.position.set(5, 8, 2);
 sunLight.castShadow = true;
 sunLight.shadow.mapSize.width = 2048;
 sunLight.shadow.mapSize.height = 2048;
@@ -367,77 +673,110 @@ sunLight.shadow.camera.left = -10;
 sunLight.shadow.camera.right = 10;
 sunLight.shadow.camera.top = 10;
 sunLight.shadow.camera.bottom = -10;
-sunLight.shadow.bias = -0.0001;
+sunLight.shadow.bias = -0.0002;
+sunLight.shadow.normalBias = 0.02;
 scene.add(sunLight);
 
-const fillLight = new THREE.DirectionalLight('#d4e4ff', 1.2);
+const fillLight = new THREE.DirectionalLight('#d4e4ff', 1.0);
 fillLight.position.set(-3, 3, -5);
 scene.add(fillLight);
+
+// Window light (soft blue fill from window direction)
+const windowLight = new THREE.DirectionalLight('#c8dcff', 1.5);
+windowLight.position.set(0, 2.0, -5);
+scene.add(windowLight);
 
 // ==================== Orbit Controls ====================
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 1.2, -1);
 controls.enableDamping = true;
 controls.dampingFactor = 0.08;
-controls.minDistance = 3;
+controls.minDistance = 2.5;
 controls.maxDistance = 18;
-controls.maxPolarAngle = Math.PI * 0.55; // Prevent going under floor
+controls.maxPolarAngle = Math.PI * 0.55;
 controls.minPolarAngle = 0.3;
 controls.mouseButtons = {
-  LEFT: null,        // We handle left click for placement
+  LEFT: null,
   MIDDLE: THREE.MOUSE.DOLLY,
   RIGHT: THREE.MOUSE.ROTATE
 };
-controls.touches = {
-  ONE: THREE.TOUCH.ROTATE,
-  TWO: THREE.TOUCH.DOLLY_PAN
-};
+controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
 controls.update();
 
 // ==================== Room ====================
-const ROOM_W = 8;  // width (x)
-const ROOM_D = 6;  // depth (z)
-const ROOM_H = 3;  // height (y)
+const ROOM_W = 8;
+const ROOM_D = 6;
+const ROOM_H = 3;
 
 const roomGroup = new THREE.Group();
 scene.add(roomGroup);
 
 let wallMaterial, floorMaterial, ceilingMaterial;
+let currentFloorStyle = 'wood';
+let currentWallStyle = 'smooth';
+
+function updateWallMaterial() {
+  const baseColor = wallColorInput.value;
+  if (currentWallStyle === 'textured') {
+    wallMaterial.map = textures.wallpaper;
+    wallMaterial.color.set('#ffffff');
+  } else {
+    wallMaterial.map = null;
+    wallMaterial.color.set(baseColor);
+  }
+  wallMaterial.needsUpdate = true;
+}
+
+function updateFloorMaterial() {
+  const baseColor = floorColorInput.value;
+  floorMaterial.color.set('#ffffff');
+  switch (currentFloorStyle) {
+    case 'wood':
+      floorMaterial.map = textures.woodFloor;
+      break;
+    case 'tile':
+      floorMaterial.map = textures.tileFloor;
+      break;
+    case 'solid':
+      floorMaterial.map = null;
+      floorMaterial.color.set(baseColor);
+      break;
+  }
+  floorMaterial.needsUpdate = true;
+}
 
 function createRoom() {
-  // Clear existing room
   while (roomGroup.children.length) roomGroup.remove(roomGroup.children[0]);
 
   wallMaterial = new THREE.MeshStandardMaterial({
     color: wallColorInput.value,
-    roughness: 0.85,
+    roughness: 0.75,
     metalness: 0.0,
   });
 
   floorMaterial = new THREE.MeshStandardMaterial({
-    color: floorColorInput.value,
-    roughness: 0.6,
+    color: '#ffffff',
+    roughness: 0.5,
     metalness: 0.05,
+    map: textures.woodFloor,
   });
+  floorMaterial.map.repeat.set(ROOM_W / 1.5, ROOM_D / 1.5);
 
   ceilingMaterial = new THREE.MeshStandardMaterial({
     color: ceilingColorInput.value,
-    roughness: 0.9,
+    roughness: 0.85,
     metalness: 0.0,
   });
 
-  // Floor
-  const floor = new THREE.Mesh(
-    new THREE.PlaneGeometry(ROOM_W, ROOM_D),
-    floorMaterial
-  );
-  floor.rotation.x = -Math.PI / 2;
-  floor.position.y = 0;
+  // === Floor (thick box instead of plane) ===
+  const floorGeom = new THREE.BoxGeometry(ROOM_W, 0.08, ROOM_D);
+  const floor = new THREE.Mesh(floorGeom, floorMaterial);
+  floor.position.y = -0.04;
   floor.receiveShadow = true;
   floor.name = 'floor';
   roomGroup.add(floor);
 
-  // Ceiling
+  // === Ceiling ===
   const ceiling = new THREE.Mesh(
     new THREE.PlaneGeometry(ROOM_W, ROOM_D),
     ceilingMaterial
@@ -447,42 +786,202 @@ function createRoom() {
   ceiling.name = 'ceiling';
   roomGroup.add(ceiling);
 
-  // Back wall (z = -ROOM_D/2)
-  const backWall = new THREE.Mesh(
-    new THREE.PlaneGeometry(ROOM_W, ROOM_H),
-    wallMaterial
-  );
-  backWall.position.set(0, ROOM_H / 2, -ROOM_D / 2);
-  backWall.receiveShadow = true;
-  backWall.name = 'wall-back';
-  roomGroup.add(backWall);
+  // === Back wall with window ===
+  const wallThickness = 0.1;
+  const windowW = 2.4;
+  const windowH = 1.6;
+  const windowSill = 0.9;
+  const wallW = ROOM_W;
+  const wallHH = ROOM_H;
+  const backZ = -ROOM_D / 2;
 
-  // Left wall (x = -ROOM_W/2)
-  const leftWall = new THREE.Mesh(
-    new THREE.PlaneGeometry(ROOM_D, ROOM_H),
+  // Back wall - left piece
+  const backLeft = new THREE.Mesh(
+    new THREE.BoxGeometry((wallW - windowW) / 2, wallHH, wallThickness),
     wallMaterial
   );
-  leftWall.rotation.y = Math.PI / 2;
+  backLeft.position.set(-(wallW + windowW) / 4, wallHH / 2, backZ);
+  backLeft.receiveShadow = true;
+  backLeft.name = 'wall-back-left';
+  roomGroup.add(backLeft);
+
+  // Back wall - right piece
+  const backRight = new THREE.Mesh(
+    new THREE.BoxGeometry((wallW - windowW) / 2, wallHH, wallThickness),
+    wallMaterial
+  );
+  backRight.position.set((wallW + windowW) / 4, wallHH / 2, backZ);
+  backRight.receiveShadow = true;
+  backRight.name = 'wall-back-right';
+  roomGroup.add(backRight);
+
+  // Back wall - top piece (above window)
+  const aboveH = wallHH - windowSill - windowH;
+  const backTop = new THREE.Mesh(
+    new THREE.BoxGeometry(windowW, aboveH, wallThickness),
+    wallMaterial
+  );
+  backTop.position.set(0, wallHH - aboveH / 2, backZ);
+  backTop.receiveShadow = true;
+  backTop.name = 'wall-back-top';
+  roomGroup.add(backTop);
+
+  // Back wall - bottom piece (below window)
+  const backBottom = new THREE.Mesh(
+    new THREE.BoxGeometry(windowW, windowSill, wallThickness),
+    wallMaterial
+  );
+  backBottom.position.set(0, windowSill / 2, backZ);
+  backBottom.receiveShadow = true;
+  backBottom.name = 'wall-back-bottom';
+  roomGroup.add(backBottom);
+
+  // === Window ===
+  const windowGroup = new THREE.Group();
+  windowGroup.name = 'window';
+
+  // Window frame (outer)
+  const frameMat = new THREE.MeshStandardMaterial({ color: '#fafafa', roughness: 0.3, metalness: 0.2 });
+  const frameThick = 0.06;
+  const frameWidth = 0.08;
+
+  // Top frame
+  const fTop = new THREE.Mesh(new THREE.BoxGeometry(windowW + frameWidth * 2, frameWidth, frameThick), frameMat);
+  fTop.position.set(0, windowSill + windowH + frameWidth / 2, backZ + wallThickness / 2);
+  fTop.castShadow = true;
+  windowGroup.add(fTop);
+
+  // Bottom frame (sill)
+  const sillMat = new THREE.MeshStandardMaterial({ color: '#f5f5f5', roughness: 0.3, metalness: 0.15 });
+  const fBot = new THREE.Mesh(new THREE.BoxGeometry(windowW + frameWidth * 2 + 0.06, frameWidth, 0.12), sillMat);
+  fBot.position.set(0, windowSill - frameWidth / 2, backZ + wallThickness / 2 + 0.02);
+  fBot.castShadow = true;
+  fBot.receiveShadow = true;
+  windowGroup.add(fBot);
+
+  // Left frame
+  const fLeft = new THREE.Mesh(new THREE.BoxGeometry(frameWidth, windowH, frameThick), frameMat);
+  fLeft.position.set(-windowW / 2 - frameWidth / 2, windowSill + windowH / 2, backZ + wallThickness / 2);
+  fLeft.castShadow = true;
+  windowGroup.add(fLeft);
+
+  // Right frame
+  const fRight = new THREE.Mesh(new THREE.BoxGeometry(frameWidth, windowH, frameThick), frameMat);
+  fRight.position.set(windowW / 2 + frameWidth / 2, windowSill + windowH / 2, backZ + wallThickness / 2);
+  fRight.castShadow = true;
+  windowGroup.add(fRight);
+
+  // Window glass panes (2x2 grid)
+  const glassMat = new THREE.MeshPhysicalMaterial({
+    color: '#d4e4ff',
+    roughness: 0.05,
+    metalness: 0.0,
+    transparent: true,
+    opacity: 0.25,
+    envMapIntensity: 0.3,
+    clearcoat: 0.1,
+  });
+
+  const paneW = windowW / 2 - 0.02;
+  const paneH = windowH / 2 - 0.02;
+  const panePositions = [
+    [-windowW / 4, windowSill + windowH * 0.75],
+    [windowW / 4, windowSill + windowH * 0.75],
+    [-windowW / 4, windowSill + windowH * 0.25],
+    [windowW / 4, windowSill + windowH * 0.25],
+  ];
+
+  panePositions.forEach(([px, py]) => {
+    const pane = new THREE.Mesh(new THREE.PlaneGeometry(paneW, paneH), glassMat);
+    pane.position.set(px, py, backZ + wallThickness + 0.001);
+    windowGroup.add(pane);
+  });
+
+  // Window cross bars
+  const barMat = new THREE.MeshStandardMaterial({ color: '#fafafa', roughness: 0.3, metalness: 0.2 });
+  const barH = new THREE.Mesh(new THREE.BoxGeometry(windowW, 0.03, 0.03), barMat);
+  barH.position.set(0, windowSill + windowH / 2, backZ + wallThickness + 0.005);
+  windowGroup.add(barH);
+
+  const barV = new THREE.Mesh(new THREE.BoxGeometry(0.03, windowH, 0.03), barMat);
+  barV.position.set(0, windowSill + windowH / 2, backZ + wallThickness + 0.005);
+  windowGroup.add(barV);
+
+  roomGroup.add(windowGroup);
+
+  // Outdoor background plane (behind window)
+  const skyCanvas = document.createElement('canvas');
+  skyCanvas.width = 256;
+  skyCanvas.height = 256;
+  const skyCtx = skyCanvas.getContext('2d');
+  const skyGrad = skyCtx.createLinearGradient(0, 0, 0, 256);
+  skyGrad.addColorStop(0, '#87CEEB');
+  skyGrad.addColorStop(0.4, '#B0D4E8');
+  skyGrad.addColorStop(0.7, '#C8E0C0');
+  skyGrad.addColorStop(1, '#A0C080');
+  skyCtx.fillStyle = skyGrad;
+  skyCtx.fillRect(0, 0, 256, 256);
+  // Trees silhouette
+  skyCtx.fillStyle = '#5A8A4A';
+  skyCtx.beginPath();
+  skyCtx.arc(120, 170, 50, 0, Math.PI * 2);
+  skyCtx.arc(70, 180, 40, 0, Math.PI * 2);
+  skyCtx.arc(180, 185, 35, 0, Math.PI * 2);
+  skyCtx.fill();
+
+  const skyTex = new THREE.CanvasTexture(skyCanvas);
+  skyTex.colorSpace = THREE.SRGBColorSpace;
+  const skyPlane = new THREE.Mesh(
+    new THREE.PlaneGeometry(windowW + 0.5, windowH + 0.3),
+    new THREE.MeshBasicMaterial({ map: skyTex, side: THREE.BackSide })
+  );
+  skyPlane.position.set(0, windowSill + windowH / 2, backZ - 0.3);
+  skyPlane.name = 'sky-background';
+  roomGroup.add(skyPlane);
+
+  // === Left wall ===
+  const leftWall = new THREE.Mesh(
+    new THREE.BoxGeometry(wallThickness, ROOM_H, ROOM_D),
+    wallMaterial
+  );
   leftWall.position.set(-ROOM_W / 2, ROOM_H / 2, 0);
   leftWall.receiveShadow = true;
   leftWall.name = 'wall-left';
   roomGroup.add(leftWall);
 
-  // Right wall (x = ROOM_W/2)
+  // === Right wall ===
   const rightWall = new THREE.Mesh(
-    new THREE.PlaneGeometry(ROOM_D, ROOM_H),
+    new THREE.BoxGeometry(wallThickness, ROOM_H, ROOM_D),
     wallMaterial
   );
-  rightWall.rotation.y = -Math.PI / 2;
   rightWall.position.set(ROOM_W / 2, ROOM_H / 2, 0);
   rightWall.receiveShadow = true;
   rightWall.name = 'wall-right';
   roomGroup.add(rightWall);
 
-  // Baseboard trim
-  const trimMat = new THREE.MeshStandardMaterial({ color: '#e8e0d5', roughness: 0.5, metalness: 0.1 });
-  const trimH = 0.08;
-  const trimD = 0.04;
+  // === Crown molding (ceiling trim) ===
+  const crownMat = new THREE.MeshStandardMaterial({ color: '#f5f0e8', roughness: 0.4, metalness: 0.1 });
+  const crownH = 0.06;
+  const crownD = 0.06;
+
+  function addCrown(w, pos, rotY = 0) {
+    const crown = new THREE.Mesh(new THREE.BoxGeometry(w, crownH, crownD), crownMat);
+    crown.position.copy(pos);
+    crown.rotation.y = rotY;
+    crown.position.y = ROOM_H - crownH / 2;
+    crown.receiveShadow = true;
+    crown.castShadow = true;
+    roomGroup.add(crown);
+  }
+
+  addCrown(ROOM_W, new THREE.Vector3(0, 0, -ROOM_D / 2));
+  addCrown(ROOM_D, new THREE.Vector3(-ROOM_W / 2, 0, 0), Math.PI / 2);
+  addCrown(ROOM_D, new THREE.Vector3(ROOM_W / 2, 0, 0), -Math.PI / 2);
+
+  // === Baseboard trim (thicker) ===
+  const trimMat = new THREE.MeshStandardMaterial({ color: '#f0ebe0', roughness: 0.45, metalness: 0.08 });
+  const trimH = 0.1;
+  const trimD = 0.05;
 
   function addTrim(w, pos, rotY = 0) {
     const trim = new THREE.Mesh(new THREE.BoxGeometry(w, trimH, trimD), trimMat);
@@ -490,25 +989,72 @@ function createRoom() {
     trim.rotation.y = rotY;
     trim.position.y = trimH / 2;
     trim.receiveShadow = true;
+    trim.castShadow = true;
     roomGroup.add(trim);
   }
 
-  addTrim(ROOM_W, new THREE.Vector3(0, 0, -ROOM_D / 2 + trimD / 2));
-  addTrim(ROOM_D, new THREE.Vector3(-ROOM_W / 2 + trimD / 2, 0, 0), Math.PI / 2);
-  addTrim(ROOM_D, new THREE.Vector3(ROOM_W / 2 - trimD / 2, 0, 0), -Math.PI / 2);
+  addTrim(ROOM_W, new THREE.Vector3(0, 0, -ROOM_D / 2));
+  addTrim(ROOM_D, new THREE.Vector3(-ROOM_W / 2, 0, 0), Math.PI / 2);
+  addTrim(ROOM_D, new THREE.Vector3(ROOM_W / 2, 0, 0), -Math.PI / 2);
+
+  // === Door on right wall ===
+  const doorH = 2.2;
+  const doorW = 0.9;
+  const doorMat = new THREE.MeshStandardMaterial({ color: '#fafafa', roughness: 0.35, metalness: 0.1 });
+  const doorFrameMat = new THREE.MeshStandardMaterial({ color: '#f0ebe0', roughness: 0.4, metalness: 0.1 });
+
+  // Door frame sides
+  const dfW = 0.06;
+  const dfD = 0.1;
+  const doorX = ROOM_W / 2 - wallThickness / 2;
+  const doorZ = ROOM_D / 2 - 1.5;
+
+  const doorFrameL = new THREE.Mesh(new THREE.BoxGeometry(dfW, doorH + 0.05, dfD), doorFrameMat);
+  doorFrameL.position.set(0, doorH / 2, doorZ - doorW / 2);
+  doorFrameL.castShadow = true;
+  roomGroup.add(doorFrameL);
+
+  const doorFrameR = new THREE.Mesh(new THREE.BoxGeometry(dfW, doorH + 0.05, dfD), doorFrameMat);
+  doorFrameR.position.set(0, doorH / 2, doorZ + doorW / 2);
+  doorFrameR.castShadow = true;
+  roomGroup.add(doorFrameR);
+
+  const doorFrameTop = new THREE.Mesh(new THREE.BoxGeometry(dfW, dfW, doorW + dfD * 2), doorFrameMat);
+  doorFrameTop.position.set(0, doorH + 0.03, doorZ);
+  doorFrameTop.castShadow = true;
+  roomGroup.add(doorFrameTop);
+
+  // Door panel (inset)
+  const doorPanel = new THREE.Mesh(
+    new THREE.BoxGeometry(0.04, doorH - 0.04, doorW - 0.08),
+    doorMat
+  );
+  doorPanel.position.set(wallThickness / 2 + 0.02, doorH / 2, doorZ);
+  doorPanel.receiveShadow = true;
+  doorPanel.name = 'door';
+  roomGroup.add(doorPanel);
+
+  // Door handle
+  const handleMat = new THREE.MeshStandardMaterial({ color: '#C0C0C0', roughness: 0.2, metalness: 0.9 });
+  const handle = new THREE.Mesh(new THREE.SphereGeometry(0.03, 16, 16), handleMat);
+  handle.position.set(wallThickness / 2 + 0.05, doorH * 0.55, doorZ + doorW / 2 - 0.08);
+  roomGroup.add(handle);
+
+  updateWallMaterial();
+  updateFloorMaterial();
 }
 
 // ==================== Grid ====================
-const gridHelper = new THREE.PolarGridHelper(5, 32, 20, 64, '#888888', '#444444');
+const gridHelper = new THREE.PolarGridHelper(5, 32, 20, 64, '#666666', '#333333');
 gridHelper.position.y = 0.001;
 scene.add(gridHelper);
 
 // ==================== Furniture ====================
 const placedFurniture = [];
+const lampLights = new Map(); // furniture -> PointLight
 let selectedFurniture = null;
 let highlightMesh = null;
 
-// Highlight ring for selected furniture
 const highlightGeom = new THREE.TorusGeometry(0.5, 0.03, 16, 32);
 const highlightMat = new THREE.MeshBasicMaterial({ color: '#e94560', transparent: true, opacity: 0.8 });
 highlightMesh = new THREE.Mesh(highlightGeom, highlightMat);
@@ -516,23 +1062,27 @@ highlightMesh.rotation.x = -Math.PI / 2;
 highlightMesh.visible = false;
 scene.add(highlightMesh);
 
-// Material presets
+// Material presets (updated with textures)
 const matPresets = {
-  wood: new THREE.MeshStandardMaterial({ color: '#8B6914', roughness: 0.55, metalness: 0.05 }),
-  darkWood: new THREE.MeshStandardMaterial({ color: '#5D3A1A', roughness: 0.5, metalness: 0.08 }),
-  fabric: new THREE.MeshStandardMaterial({ color: '#D4C5B9', roughness: 0.9, metalness: 0.0 }),
-  fabricBlue: new THREE.MeshStandardMaterial({ color: '#5B7FA5', roughness: 0.85, metalness: 0.0 }),
-  fabricGreen: new THREE.MeshStandardMaterial({ color: '#7A9A7E', roughness: 0.85, metalness: 0.0 }),
-  metal: new THREE.MeshStandardMaterial({ color: '#333333', roughness: 0.3, metalness: 0.8 }),
-  glass: new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.1, metalness: 0.1, transparent: true, opacity: 0.6 }),
-  white: new THREE.MeshStandardMaterial({ color: '#FAFAFA', roughness: 0.5, metalness: 0.05 }),
-  mattress: new THREE.MeshStandardMaterial({ color: '#F5F5F5', roughness: 0.8, metalness: 0.0 }),
-  lampshade: new THREE.MeshStandardMaterial({ color: '#FFF8E7', roughness: 0.6, metalness: 0.0, emissive: '#FFF8E7', emissiveIntensity: 0.3 }),
-  rugMat: new THREE.MeshStandardMaterial({ color: '#C4956A', roughness: 0.95, metalness: 0.0 }),
+  wood: () => new THREE.MeshStandardMaterial({ map: textures.woodGrain, roughness: 0.5, metalness: 0.05, color: '#ffffff' }),
+  darkWood: () => new THREE.MeshStandardMaterial({ map: textures.darkWoodGrain, roughness: 0.45, metalness: 0.08, color: '#ffffff' }),
+  fabric: () => new THREE.MeshStandardMaterial({ map: textures.fabric, roughness: 0.85, metalness: 0.0, color: '#ffffff' }),
+  fabricBlue: () => new THREE.MeshStandardMaterial({ map: textures.fabricBlue, roughness: 0.8, metalness: 0.0, color: '#ffffff' }),
+  fabricGreen: () => new THREE.MeshStandardMaterial({ map: textures.fabricGreen, roughness: 0.8, metalness: 0.0, color: '#ffffff' }),
+  metal: () => new THREE.MeshStandardMaterial({ color: '#333333', roughness: 0.25, metalness: 0.85 }),
+  glass: () => new THREE.MeshPhysicalMaterial({ color: '#ffffff', roughness: 0.05, metalness: 0.0, transparent: true, opacity: 0.5, clearcoat: 0.2 }),
+  white: () => new THREE.MeshStandardMaterial({ color: '#FAFAFA', roughness: 0.45, metalness: 0.05 }),
+  mattress: () => new THREE.MeshStandardMaterial({ color: '#F5F5F5', roughness: 0.75, metalness: 0.0 }),
+  lampshade: () => new THREE.MeshStandardMaterial({ color: '#FFF8E7', roughness: 0.55, metalness: 0.0, emissive: '#FFF8E7', emissiveIntensity: 0.25 }),
+  marble: () => new THREE.MeshStandardMaterial({ map: textures.marble, roughness: 0.3, metalness: 0.05, color: '#ffffff' }),
+  plantPot: () => new THREE.MeshStandardMaterial({ color: '#C67B5C', roughness: 0.6, metalness: 0.05 }),
+  plantLeaf: () => new THREE.MeshStandardMaterial({ color: '#4A8C3F', roughness: 0.7, metalness: 0.0 }),
+  artFrame: () => new THREE.MeshStandardMaterial({ color: '#C8A45C', roughness: 0.4, metalness: 0.15 }),
+  curtainMat: () => new THREE.MeshStandardMaterial({ color: '#E8D5C0', roughness: 0.8, metalness: 0.0 }),
 };
 
 function cloneMat(key) {
-  return matPresets[key].clone();
+  return matPresets[key]();
 }
 
 function createBox(w, h, d, material) {
@@ -551,47 +1101,98 @@ function createCylinder(rTop, rBot, h, material, segments = 32) {
   return mesh;
 }
 
-// === Furniture Factory Functions ===
-// Each returns a Group with name and metadata
+// Rounded rectangle shape for extruded furniture parts
+function createRoundedRectShape(w, h, r) {
+  const shape = new THREE.Shape();
+  const x = -w / 2, y = -h / 2;
+  shape.moveTo(x + r, y);
+  shape.lineTo(x + w - r, y);
+  shape.quadraticCurveTo(x + w, y, x + w, y + r);
+  shape.lineTo(x + w, y + h - r);
+  shape.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  shape.lineTo(x + r, y + h);
+  shape.quadraticCurveTo(x, y + h, x, y + h - r);
+  shape.lineTo(x, y + r);
+  shape.quadraticCurveTo(x, y, x + r, y);
+  return shape;
+}
+
+// ==================== Furniture Factories ====================
 
 function createSofa() {
   const group = new THREE.Group();
   group.name = 'sofa';
 
-  // Seat base
-  const seat = createBox(2.4, 0.35, 0.85, cloneMat('fabric'));
-  seat.position.y = 0.35;
+  const fabricMat = cloneMat('fabric');
+
+  // Seat base (rounded)
+  const seatShape = createRoundedRectShape(2.4, 0.85, 0.08);
+  const seatExtrudeSettings = { steps: 1, depth: 0.3, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 5 };
+  const seatGeom = new THREE.ExtrudeGeometry(seatShape, seatExtrudeSettings);
+  const seat = new THREE.Mesh(seatGeom, fabricMat);
+  seat.position.set(0, 0.2, -0.425);
+  seat.rotation.x = -Math.PI / 2;
+  seat.castShadow = true;
+  seat.receiveShadow = true;
   group.add(seat);
 
-  // Seat cushion
-  const cushion = createBox(2.3, 0.15, 0.78, cloneMat('fabric'));
-  cushion.position.y = 0.55;
+  // Seat cushion (rounded top)
+  const cushionShape = createRoundedRectShape(2.25, 0.75, 0.06);
+  const cushionExtSettings = { steps: 1, depth: 0.12, bevelEnabled: true, bevelThickness: 0.04, bevelSize: 0.04, bevelSegments: 5 };
+  const cushionGeom = new THREE.ExtrudeGeometry(cushionShape, cushionExtSettings);
+  const cushion = new THREE.Mesh(cushionGeom, fabricMat);
+  cushion.position.set(0, 0.5, -0.425);
+  cushion.rotation.x = -Math.PI / 2;
+  cushion.castShadow = true;
+  cushion.receiveShadow = true;
   group.add(cushion);
 
   // Backrest
-  const back = createBox(2.4, 0.5, 0.2, cloneMat('fabric'));
-  back.position.set(0, 0.7, -0.33);
-  group.add(back);
+  const backShape = createRoundedRectShape(2.4, 0.55, 0.05);
+  const backExtSettings = { steps: 1, depth: 0.15, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 5 };
+  const backGeom = new THREE.ExtrudeGeometry(backShape, backExtSettings);
+  const backrest = new THREE.Mesh(backGeom, fabricMat);
+  backrest.position.set(0, 0.6, -0.75);
+  backrest.castShadow = true;
+  backrest.receiveShadow = true;
+  group.add(backrest);
 
-  // Left armrest
-  const armL = createBox(0.18, 0.45, 0.85, cloneMat('fabric'));
-  armL.position.set(-1.2, 0.4, 0);
-  group.add(armL);
+  // Throw pillows
+  const pillowMat = new THREE.MeshStandardMaterial({ color: '#E8A87C', roughness: 0.7, metalness: 0.0 });
+  [-0.6, 0.6].forEach(x => {
+    const pillow = new THREE.Mesh(
+      new THREE.SphereGeometry(0.16, 16, 12),
+      pillowMat
+    );
+    pillow.scale.set(1, 0.7, 0.5);
+    pillow.position.set(x, 0.62, -0.35);
+    pillow.rotation.z = x > 0 ? -0.2 : 0.2;
+    pillow.castShadow = true;
+    group.add(pillow);
+  });
 
-  // Right armrest
-  const armR = createBox(0.18, 0.45, 0.85, cloneMat('fabric'));
-  armR.position.set(1.2, 0.4, 0);
-  group.add(armR);
+  // Armrests (rounded)
+  [-1, 1].forEach(side => {
+    const armShape = createRoundedRectShape(0.2, 0.8, 0.06);
+    const armExtSettings = { steps: 1, depth: 0.2, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 5 };
+    const armGeom = new THREE.ExtrudeGeometry(armShape, armExtSettings);
+    const arm = new THREE.Mesh(armGeom, fabricMat);
+    arm.position.set(side * 1.15, 0.3, -0.425);
+    arm.rotation.x = -Math.PI / 2;
+    arm.castShadow = true;
+    arm.receiveShadow = true;
+    group.add(arm);
+  });
 
   // Legs
   const legMat = cloneMat('metal');
   [[-1.05, -0.35], [1.05, -0.35], [-1.05, 0.35], [1.05, 0.35]].forEach(([x, z]) => {
-    const leg = createCylinder(0.04, 0.04, 0.15, legMat, 16);
-    leg.position.set(x, 0.08, z);
+    const leg = createCylinder(0.04, 0.05, 0.12, legMat, 16);
+    leg.position.set(x, 0.06, z);
     group.add(leg);
   });
 
-  group.userData = { type: 'sofa', width: 2.4, depth: 0.85, rotation: 0 };
+  group.userData = { type: 'sofa', width: 2.4, depth: 0.9, rotation: 0 };
   return group;
 }
 
@@ -599,14 +1200,21 @@ function createCoffeeTable() {
   const group = new THREE.Group();
   group.name = 'coffee-table';
 
-  const top = createBox(1.2, 0.05, 0.6, cloneMat('wood'));
-  top.position.y = 0.4;
+  // Top with marble texture
+  const topShape = createRoundedRectShape(1.2, 0.6, 0.06);
+  const topSettings = { steps: 1, depth: 0.04, bevelEnabled: true, bevelThickness: 0.02, bevelSize: 0.02, bevelSegments: 3 };
+  const topGeom = new THREE.ExtrudeGeometry(topShape, topSettings);
+  const top = new THREE.Mesh(topGeom, cloneMat('marble'));
+  top.position.set(0, 0.38, 0);
+  top.rotation.x = -Math.PI / 2;
+  top.castShadow = true;
+  top.receiveShadow = true;
   group.add(top);
 
   const legMat = cloneMat('darkWood');
   [[-0.5, -0.22], [0.5, -0.22], [-0.5, 0.22], [0.5, 0.22]].forEach(([x, z]) => {
-    const leg = createCylinder(0.03, 0.03, 0.38, legMat, 16);
-    leg.position.set(x, 0.19, z);
+    const leg = createCylinder(0.03, 0.04, 0.36, legMat, 16);
+    leg.position.set(x, 0.18, z);
     group.add(leg);
   });
 
@@ -618,20 +1226,25 @@ function createDiningTable() {
   const group = new THREE.Group();
   group.name = 'dining-table';
 
-  const top = createBox(2.0, 0.06, 1.0, cloneMat('wood'));
-  top.position.y = 0.75;
+  const topShape = createRoundedRectShape(2.0, 1.0, 0.08);
+  const topSettings = { steps: 1, depth: 0.05, bevelEnabled: true, bevelThickness: 0.025, bevelSize: 0.025, bevelSegments: 3 };
+  const topGeom = new THREE.ExtrudeGeometry(topShape, topSettings);
+  const top = new THREE.Mesh(topGeom, cloneMat('wood'));
+  top.position.set(0, 0.72, 0);
+  top.rotation.x = -Math.PI / 2;
+  top.castShadow = true;
+  top.receiveShadow = true;
   group.add(top);
 
   const legMat = cloneMat('darkWood');
   [[-0.85, -0.4], [0.85, -0.4], [-0.85, 0.4], [0.85, 0.4]].forEach(([x, z]) => {
-    const leg = createCylinder(0.05, 0.05, 0.72, legMat, 16);
-    leg.position.set(x, 0.36, z);
+    const leg = createCylinder(0.05, 0.06, 0.7, legMat, 16);
+    leg.position.set(x, 0.35, z);
     group.add(leg);
   });
 
-  // Cross beam
-  const beam = createBox(1.0, 0.04, 0.04, legMat);
-  beam.position.y = 0.15;
+  const beam = createBox(1.2, 0.04, 0.04, legMat);
+  beam.position.y = 0.12;
   group.add(beam);
 
   group.userData = { type: 'dining-table', width: 2.0, depth: 1.0, rotation: 0 };
@@ -642,17 +1255,32 @@ function createChair() {
   const group = new THREE.Group();
   group.name = 'chair';
 
-  const seat = createBox(0.45, 0.05, 0.45, cloneMat('fabricBlue'));
-  seat.position.y = 0.45;
+  const chairMat = cloneMat('fabricBlue');
+
+  // Seat
+  const seatShape = createRoundedRectShape(0.44, 0.44, 0.05);
+  const seatSettings = { steps: 1, depth: 0.04, bevelEnabled: true, bevelThickness: 0.02, bevelSize: 0.02, bevelSegments: 3 };
+  const seatGeom = new THREE.ExtrudeGeometry(seatShape, seatSettings);
+  const seat = new THREE.Mesh(seatGeom, chairMat);
+  seat.position.set(0, 0.44, 0);
+  seat.rotation.x = -Math.PI / 2;
+  seat.castShadow = true;
+  seat.receiveShadow = true;
   group.add(seat);
 
-  const back = createBox(0.45, 0.35, 0.04, cloneMat('fabricBlue'));
-  back.position.set(0, 0.65, -0.22);
+  // Curved backrest
+  const backShape = createRoundedRectShape(0.42, 0.38, 0.04);
+  const backSettings = { steps: 1, depth: 0.03, bevelEnabled: true, bevelThickness: 0.015, bevelSize: 0.015, bevelSegments: 3 };
+  const backGeom = new THREE.ExtrudeGeometry(backShape, backSettings);
+  const back = new THREE.Mesh(backGeom, chairMat);
+  back.position.set(0, 0.63, -0.21);
+  back.rotation.x = 0.15;
+  back.castShadow = true;
   group.add(back);
 
   const legMat = cloneMat('metal');
-  [[-0.18, -0.18], [0.18, -0.18], [-0.18, 0.18], [0.18, 0.18]].forEach(([x, z]) => {
-    const leg = createCylinder(0.02, 0.02, 0.43, legMat, 16);
+  [[-0.17, -0.17], [0.17, -0.17], [-0.17, 0.17], [0.17, 0.17]].forEach(([x, z]) => {
+    const leg = createCylinder(0.02, 0.022, 0.42, legMat, 16);
     leg.position.set(x, 0.21, z);
     group.add(leg);
   });
@@ -665,28 +1293,53 @@ function createBed() {
   const group = new THREE.Group();
   group.name = 'bed';
 
+  const woodMat = cloneMat('darkWood');
+
   // Base frame
-  const base = createBox(1.8, 0.3, 2.1, cloneMat('darkWood'));
-  base.position.y = 0.15;
+  const base = createBox(1.8, 0.25, 2.1, woodMat);
+  base.position.y = 0.13;
   group.add(base);
 
-  // Mattress
-  const mattress = createBox(1.7, 0.2, 2.0, cloneMat('mattress'));
-  mattress.position.y = 0.4;
+  // Mattress (rounded)
+  const mattressShape = createRoundedRectShape(1.68, 1.98, 0.06);
+  const mattressSettings = { steps: 1, depth: 0.18, bevelEnabled: true, bevelThickness: 0.04, bevelSize: 0.04, bevelSegments: 5 };
+  const mattressGeom = new THREE.ExtrudeGeometry(mattressShape, mattressSettings);
+  const mattress = new THREE.Mesh(mattressGeom, cloneMat('mattress'));
+  mattress.position.set(0, 0.25, 0);
+  mattress.rotation.x = -Math.PI / 2;
+  mattress.castShadow = true;
+  mattress.receiveShadow = true;
   group.add(mattress);
 
-  // Headboard
-  const headboard = createBox(1.8, 0.7, 0.08, cloneMat('darkWood'));
-  headboard.position.set(0, 0.65, -1.01);
+  // Duvet fold
+  const duvetGeom = new THREE.BoxGeometry(1.6, 0.04, 1.2);
+  const duvetMat = new THREE.MeshStandardMaterial({ color: '#E8DDD0', roughness: 0.7, metalness: 0.0 });
+  const duvet = new THREE.Mesh(duvetGeom, duvetMat);
+  duvet.position.set(0, 0.35, 0.1);
+  duvet.castShadow = true;
+  group.add(duvet);
+
+  // Headboard (rounded top)
+  const headboardShape = createRoundedRectShape(1.8, 0.7, 0.06);
+  const hbSettings = { steps: 1, depth: 0.06, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 5 };
+  const hbGeom = new THREE.ExtrudeGeometry(headboardShape, hbSettings);
+  const headboard = new THREE.Mesh(hbGeom, woodMat);
+  headboard.position.set(0, 0.65, -1.02);
+  headboard.castShadow = true;
   group.add(headboard);
 
-  // Pillow
-  const pillow = createBox(0.55, 0.08, 0.35, cloneMat('white'));
-  pillow.position.set(-0.4, 0.54, -0.6);
-  group.add(pillow);
-  const pillow2 = createBox(0.55, 0.08, 0.35, cloneMat('white'));
-  pillow2.position.set(0.4, 0.54, -0.6);
-  group.add(pillow2);
+  // Pillows
+  const pillowMat = new THREE.MeshStandardMaterial({ color: '#FFFFFF', roughness: 0.5, metalness: 0.0 });
+  [-0.4, 0.4].forEach(x => {
+    const pillow = new THREE.Mesh(
+      new THREE.SphereGeometry(0.18, 16, 12),
+      pillowMat
+    );
+    pillow.scale.set(1.0, 0.5, 0.55);
+    pillow.position.set(x, 0.38, -0.7);
+    pillow.castShadow = true;
+    group.add(pillow);
+  });
 
   group.userData = { type: 'bed', width: 1.8, depth: 2.1, rotation: 0 };
   return group;
@@ -698,7 +1351,6 @@ function createBookshelf() {
 
   const mat = cloneMat('darkWood');
 
-  // Sides
   const leftSide = createBox(0.04, 2.0, 0.35, mat);
   leftSide.position.set(-0.45, 1.0, 0);
   group.add(leftSide);
@@ -706,25 +1358,23 @@ function createBookshelf() {
   rightSide.position.set(0.45, 1.0, 0);
   group.add(rightSide);
 
-  // Shelves
+  const bookColors = ['#8B4513', '#A0522D', '#6B3410', '#CD853F', '#D2691E', '#8B0000', '#191970', '#006400', '#4B0082', '#800020'];
   [0.3, 0.7, 1.1, 1.5].forEach(y => {
     const shelf = createBox(0.9, 0.03, 0.35, mat);
     shelf.position.y = y;
     group.add(shelf);
 
-    // Books on each shelf
-    const bookMat = new THREE.MeshStandardMaterial({ color: new THREE.Color().setHSL(Math.random() * 0.1 + 0.05, 0.6, 0.35 + Math.random() * 0.2), roughness: 0.7 });
     for (let i = 0; i < 3 + Math.floor(Math.random() * 3); i++) {
-      const bw = 0.06 + Math.random() * 0.06;
-      const bh = 0.15 + Math.random() * 0.12;
-      const book = createBox(bw, bh, 0.25, bookMat.clone());
+      const bw = 0.05 + Math.random() * 0.07;
+      const bh = 0.14 + Math.random() * 0.12;
+      const bc = bookColors[Math.floor(Math.random() * bookColors.length)];
+      const bookMat = new THREE.MeshStandardMaterial({ color: bc, roughness: 0.6, metalness: 0.05 });
+      const book = createBox(bw, bh, 0.24, bookMat);
       book.position.set(-0.3 + i * 0.13 + Math.random() * 0.06, y + 0.03 + bh / 2, 0);
-      book.castShadow = true;
       group.add(book);
     }
   });
 
-  // Top
   const top = createBox(0.94, 0.04, 0.35, mat);
   top.position.y = 2.0;
   group.add(top);
@@ -739,34 +1389,36 @@ function createFloorLamp() {
 
   const poleMat = cloneMat('metal');
 
-  // Base
   const base = createCylinder(0.15, 0.18, 0.05, poleMat, 32);
   base.position.y = 0.03;
   group.add(base);
 
-  // Pole
-  const pole = createCylinder(0.03, 0.03, 1.5, poleMat, 16);
+  const pole = createCylinder(0.025, 0.025, 1.5, poleMat, 16);
   pole.position.y = 0.78;
   group.add(pole);
 
-  // Shade
   const shade = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.15, 0.25, 0.4, 32, 1, true),
+    new THREE.CylinderGeometry(0.14, 0.24, 0.4, 32, 1, true),
     cloneMat('lampshade')
   );
   shade.position.y = 1.6;
   shade.castShadow = true;
   group.add(shade);
 
-  // Light bulb (small sphere inside shade)
   const bulb = new THREE.Mesh(
-    new THREE.SphereGeometry(0.06, 16, 16),
-    new THREE.MeshStandardMaterial({ color: '#FFFAED', roughness: 0.2, emissive: '#FFFAED', emissiveIntensity: 1.0 })
+    new THREE.SphereGeometry(0.05, 16, 16),
+    new THREE.MeshStandardMaterial({ color: '#FFFAED', roughness: 0.15, emissive: '#FFFAED', emissiveIntensity: 1.5 })
   );
   bulb.position.y = 1.6;
   group.add(bulb);
 
-  group.userData = { type: 'floor-lamp', width: 0.3, depth: 0.3, rotation: 0 };
+  // Light marker for runtime PointLight attachment
+  const lightMarker = new THREE.Object3D();
+  lightMarker.position.set(0, 1.55, 0);
+  lightMarker.name = 'light-marker';
+  group.add(lightMarker);
+
+  group.userData = { type: 'floor-lamp', width: 0.3, depth: 0.3, rotation: 0, hasLight: true };
   return group;
 }
 
@@ -774,25 +1426,34 @@ function createRug() {
   const group = new THREE.Group();
   group.name = 'rug';
 
-  const rug = new THREE.Mesh(
-    new THREE.PlaneGeometry(2.0, 1.4),
-    cloneMat('rugMat')
-  );
+  const rugGeom = new THREE.PlaneGeometry(2.0, 1.4, 8, 8);
+  const rugMat = new THREE.MeshStandardMaterial({
+    map: textures.rug,
+    roughness: 0.9,
+    metalness: 0.0,
+    color: '#ffffff',
+  });
+  const rug = new THREE.Mesh(rugGeom, rugMat);
   rug.rotation.x = -Math.PI / 2;
-  rug.position.y = 0.003;
+  rug.position.y = 0.002;
   rug.receiveShadow = true;
   group.add(rug);
 
-  // Border detail
-  const borderGeom = new THREE.RingGeometry(0.95, 1.0, 4);
-  const border = new THREE.Mesh(
-    borderGeom,
-    new THREE.MeshStandardMaterial({ color: '#A0785A', roughness: 0.8, side: THREE.DoubleSide })
-  );
-  border.scale.set(2.0, 1.4, 1);
-  border.rotation.x = -Math.PI / 2;
-  border.position.y = 0.004;
-  group.add(border);
+  // Fringe edges (subtle)
+  const fringeMat = new THREE.MeshStandardMaterial({ color: '#A0785A', roughness: 0.85, metalness: 0.0 });
+  for (let side = 0; side < 4; side++) {
+    const isHorizontal = side < 2;
+    const fringe = new THREE.Mesh(
+      new THREE.BoxGeometry(isHorizontal ? 2.05 : 0.03, 0.003, isHorizontal ? 0.03 : 1.45),
+      fringeMat
+    );
+    fringe.position.y = 0.004;
+    if (side === 0) fringe.position.z = -0.71;
+    if (side === 1) fringe.position.z = 0.71;
+    if (side === 2) fringe.position.x = -1.01;
+    if (side === 3) fringe.position.x = 1.01;
+    group.add(fringe);
+  }
 
   group.userData = { type: 'rug', width: 2.0, depth: 1.4, rotation: 0 };
   return group;
@@ -802,34 +1463,236 @@ function createTVStand() {
   const group = new THREE.Group();
   group.name = 'tv-stand';
 
-  // Main body
-  const body = createBox(2.0, 0.5, 0.5, cloneMat('darkWood'));
+  const bodyGeom = new THREE.BoxGeometry(2.0, 0.5, 0.5);
+  const body = new THREE.Mesh(bodyGeom, cloneMat('darkWood'));
   body.position.y = 0.35;
+  body.castShadow = true;
+  body.receiveShadow = true;
   group.add(body);
 
-  // Top surface
-  const top = createBox(2.1, 0.04, 0.55, cloneMat('wood'));
-  top.position.y = 0.6;
+  const topShape = createRoundedRectShape(2.1, 0.55, 0.04);
+  const topSettings = { steps: 1, depth: 0.03, bevelEnabled: true, bevelThickness: 0.015, bevelSize: 0.015, bevelSegments: 3 };
+  const topGeom = new THREE.ExtrudeGeometry(topShape, topSettings);
+  const top = new THREE.Mesh(topGeom, cloneMat('wood'));
+  top.position.set(0, 0.6, 0);
+  top.rotation.x = -Math.PI / 2;
+  top.castShadow = true;
+  top.receiveShadow = true;
   group.add(top);
 
-  // Legs
   const legMat = cloneMat('metal');
   [[-0.9, -0.18], [0.9, -0.18], [-0.9, 0.18], [0.9, 0.18]].forEach(([x, z]) => {
-    const leg = createCylinder(0.03, 0.03, 0.1, legMat, 16);
-    leg.position.set(x, 0.05, z);
+    const leg = createCylinder(0.03, 0.035, 0.08, legMat, 16);
+    leg.position.set(x, 0.04, z);
     group.add(leg);
   });
 
-  // TV on top
-  const tvScreen = createBox(1.2, 0.65, 0.03, new THREE.MeshStandardMaterial({ color: '#111111', roughness: 0.1, metalness: 0.5 }));
-  tvScreen.position.set(0, 1.0, -0.1);
+  // TV screen
+  const screenMat = new THREE.MeshStandardMaterial({ color: '#0a0a0a', roughness: 0.08, metalness: 0.6 });
+  const tvScreen = createBox(1.2, 0.65, 0.02, screenMat);
+  tvScreen.position.set(0, 1.0, -0.08);
   group.add(tvScreen);
 
-  const tvBezel = createBox(1.3, 0.72, 0.04, new THREE.MeshStandardMaterial({ color: '#1a1a1a', roughness: 0.3, metalness: 0.6 }));
-  tvBezel.position.set(0, 1.0, -0.12);
+  const bezelMat = new THREE.MeshStandardMaterial({ color: '#1a1a1a', roughness: 0.25, metalness: 0.7 });
+  const tvBezel = createBox(1.3, 0.72, 0.03, bezelMat);
+  tvBezel.position.set(0, 1.0, -0.1);
   group.add(tvBezel);
 
+  // TV stand
+  const standBase = createCylinder(0.06, 0.08, 0.06, cloneMat('metal'), 16);
+  standBase.position.set(0, 0.58, -0.04);
+  group.add(standBase);
+
   group.userData = { type: 'tv-stand', width: 2.1, depth: 0.55, rotation: 0 };
+  return group;
+}
+
+// ==================== NEW: Plant ====================
+function createPlant() {
+  const group = new THREE.Group();
+  group.name = 'plant';
+
+  // Pot
+  const potMat = cloneMat('plantPot');
+  const pot = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.12, 0.1, 0.35, 24),
+    potMat
+  );
+  pot.position.y = 0.18;
+  pot.castShadow = true;
+  pot.receiveShadow = true;
+  group.add(pot);
+
+  // Pot rim
+  const rim = new THREE.Mesh(
+    new THREE.TorusGeometry(0.12, 0.015, 8, 24),
+    potMat
+  );
+  rim.position.y = 0.35;
+  rim.rotation.x = Math.PI / 2;
+  rim.castShadow = true;
+  group.add(rim);
+
+  // Soil
+  const soilMat = new THREE.MeshStandardMaterial({ color: '#4A3520', roughness: 0.9, metalness: 0.0 });
+  const soil = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.1, 0.11, 0.04, 24),
+    soilMat
+  );
+  soil.position.y = 0.34;
+  group.add(soil);
+
+  // Foliage balls
+  const leafMat = cloneMat('plantLeaf');
+  const foliageGroup = new THREE.Group();
+
+  // Main stem
+  const stem = createCylinder(0.02, 0.025, 0.4, new THREE.MeshStandardMaterial({ color: '#5A4A30', roughness: 0.7 }), 12);
+  stem.position.y = 0.55;
+  foliageGroup.add(stem);
+
+  // Leaf clusters
+  const clusterPositions = [
+    { y: 0.45, s: 0.22 }, { y: 0.55, s: 0.28 }, { y: 0.68, s: 0.25 },
+    { y: 0.6, x: 0.12, s: 0.18 }, { y: 0.52, x: -0.1, s: 0.2 },
+    { y: 0.72, x: 0.08, s: 0.16 }, { y: 0.7, x: -0.09, s: 0.17 },
+  ];
+
+  clusterPositions.forEach(cp => {
+    const cluster = new THREE.Mesh(
+      new THREE.SphereGeometry(cp.s, 8, 6),
+      leafMat
+    );
+    cluster.position.set(cp.x || 0, cp.y, 0);
+    cluster.scale.set(1, 0.7 + Math.random() * 0.3, 1);
+    cluster.castShadow = true;
+    cluster.receiveShadow = true;
+    foliageGroup.add(cluster);
+  });
+
+  group.add(foliageGroup);
+
+  group.userData = { type: 'plant', width: 0.5, depth: 0.5, rotation: 0 };
+  return group;
+}
+
+// ==================== NEW: Wall Art ====================
+function createWallArt() {
+  const group = new THREE.Group();
+  group.name = 'wall-art';
+
+  // Frame
+  const frameMat = cloneMat('artFrame');
+  const frameOuter = 0.9;
+  const frameInner = 0.72;
+  const frameThickness = 0.03;
+
+  // Frame border (4 pieces)
+  const fW = 0.04;
+  const framePieces = [
+    { w: frameOuter, h: fW, x: 0, y: frameInner / 2 },
+    { w: frameOuter, h: fW, x: 0, y: -frameInner / 2 },
+    { w: fW, h: frameInner, x: -frameOuter / 2 + fW / 2, y: 0 },
+    { w: fW, h: frameInner, x: frameOuter / 2 - fW / 2, y: 0 },
+  ];
+
+  framePieces.forEach(fp => {
+    const piece = new THREE.Mesh(
+      new THREE.BoxGeometry(fp.w, fp.h, frameThickness + 0.01),
+      frameMat
+    );
+    piece.position.set(fp.x, fp.y, 0);
+    piece.castShadow = true;
+    group.add(piece);
+  });
+
+  // Canvas (the artwork)
+  const artMat = new THREE.MeshStandardMaterial({
+    map: textures.art,
+    roughness: 0.6,
+    metalness: 0.0,
+    color: '#ffffff',
+  });
+  const canvas = new THREE.Mesh(
+    new THREE.PlaneGeometry(frameInner - 0.02, frameInner - 0.02),
+    artMat
+  );
+  canvas.position.z = 0.015;
+  group.add(canvas);
+
+  // Mounting wire indicator (small bump on back)
+  const wireBump = new THREE.Mesh(
+    new THREE.SphereGeometry(0.02, 8, 8),
+    new THREE.MeshStandardMaterial({ color: '#888888', roughness: 0.3, metalness: 0.8 })
+  );
+  wireBump.position.set(0, frameOuter * 0.35, -0.04);
+  group.add(wireBump);
+
+  // Rotate 90° so it's against the wall (hanging flat on YZ plane)
+  // We'll handle wall attachment in placement
+
+  group.userData = { type: 'wall-art', width: 0.9, depth: 0.05, rotation: 0, wallMounted: true };
+  return group;
+}
+
+// ==================== NEW: Curtain ====================
+function createCurtain() {
+  const group = new THREE.Group();
+  group.name = 'curtain';
+
+  const mat = cloneMat('curtainMat');
+
+  // Left curtain panel (with folds)
+  const panelGeom = new THREE.BoxGeometry(1.0, 2.5, 0.08, 4, 8, 1);
+  // Create fold effect by modifying vertices slightly
+  const positions = panelGeom.attributes.position;
+  for (let i = 0; i < positions.count; i++) {
+    const x = positions.getX(i);
+    const y = positions.getY(i);
+    const z = positions.getZ(i);
+    const fold = Math.sin(x * 8) * 0.04 + Math.sin(y * 3) * 0.02;
+    positions.setZ(i, z + fold);
+  }
+  panelGeom.computeVertexNormals();
+
+  const leftPanel = new THREE.Mesh(panelGeom, mat);
+  leftPanel.position.set(-0.5, 1.25, 0);
+  leftPanel.castShadow = true;
+  leftPanel.receiveShadow = true;
+  group.add(leftPanel);
+
+  const rightPanel = new THREE.Mesh(panelGeom.clone(), mat);
+  rightPanel.position.set(0.5, 1.25, 0);
+  rightPanel.castShadow = true;
+  rightPanel.receiveShadow = true;
+  group.add(rightPanel);
+
+  // Curtain rod
+  const rodMat = cloneMat('metal');
+  const rod = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.02, 0.02, 2.2, 16),
+    rodMat
+  );
+  rod.rotation.z = Math.PI / 2;
+  rod.position.set(0, 2.5, 0.06);
+  rod.castShadow = true;
+  group.add(rod);
+
+  // Rod finials
+  [-1.1, 1.1].forEach(x => {
+    const finial = new THREE.Mesh(
+      new THREE.SphereGeometry(0.04, 12, 8),
+      rodMat
+    );
+    finial.position.set(x, 2.5, 0.06);
+    finial.castShadow = true;
+    group.add(finial);
+  });
+
+  // Rotate so curtain hangs against the wall
+  // Will be positioned/adjusted during placement
+
+  group.userData = { type: 'curtain', width: 2.2, depth: 0.1, rotation: 0, wallMounted: true };
   return group;
 }
 
@@ -843,15 +1706,17 @@ const furnitureFactories = {
   'floor-lamp': createFloorLamp,
   'rug': createRug,
   'tv-stand': createTVStand,
+  'plant': createPlant,
+  'wall-art': createWallArt,
+  'curtain': createCurtain,
 };
 
 // ==================== Interaction State ====================
 let activeFurnitureType = null;
 let ghostObject = null;
 let isPlacing = false;
-let targetRotation = 0; // in radians
+let targetRotation = 0;
 
-// ==================== Raycaster ====================
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 const floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
@@ -860,28 +1725,23 @@ function getFloorIntersection(event) {
   const rect = renderer.domElement.getBoundingClientRect();
   mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
   mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
   raycaster.setFromCamera(mouse, camera);
-
   const intersection = new THREE.Vector3();
   const hit = raycaster.ray.intersectPlane(floorPlane, intersection);
   return hit ? intersection : null;
 }
 
-// ==================== Ghost Preview ====================
 function updateGhostObject() {
   if (ghostObject) {
     scene.remove(ghostObject);
     disposeObject(ghostObject);
     ghostObject = null;
   }
-
   if (!activeFurnitureType || !furnitureFactories[activeFurnitureType]) return;
 
   ghostObject = furnitureFactories[activeFurnitureType]();
   ghostObject.rotation.y = targetRotation;
 
-  // Make ghost semi-transparent
   ghostObject.traverse(child => {
     if (child.isMesh) {
       child.material = child.material.clone();
@@ -901,7 +1761,6 @@ function setActiveFurniture(type) {
   targetRotation = 0;
   updateGhostObject();
 
-  // Update UI
   document.querySelectorAll('.furniture-item').forEach(el => el.classList.remove('active'));
   const activeEl = document.querySelector(`[data-type="${type}"]`);
   if (activeEl) activeEl.classList.add('active');
@@ -911,35 +1770,97 @@ function setActiveFurniture(type) {
     container.classList.add('placing');
     statusText.textContent = '🎯 点击地板放置 | R=旋转 | Esc=取消';
     tooltip.classList.add('visible');
-    controls.mouseButtons.LEFT = null;
   } else {
     isPlacing = false;
     container.classList.remove('placing');
     statusText.textContent = '✅ 就绪';
     tooltip.classList.remove('visible');
-    controls.mouseButtons.LEFT = null;
   }
-
   deselectFurniture();
 }
 
-// ==================== Place Furniture ====================
 function placeFurniture(position) {
   if (!activeFurnitureType || !furnitureFactories[activeFurnitureType]) return;
 
   const furniture = furnitureFactories[activeFurnitureType]();
   furniture.position.copy(position);
   furniture.rotation.y = targetRotation;
-
-  // Make sure furniture sits on floor
   furniture.position.y = 0;
+
+  // Wall-mounted furniture: snap to nearest wall
+  if (furniture.userData.wallMounted) {
+    snapToWall(furniture);
+  }
 
   scene.add(furniture);
   placedFurniture.push(furniture);
-  updateFurnitureCount();
 
-  // Keep placing same type
+  // Add lamp light if this is a floor lamp
+  if (furniture.userData.hasLight) {
+    addLampLight(furniture);
+  }
+
+  updateFurnitureCount();
   statusText.textContent = '🎯 继续放置 | R=旋转 | Esc=取消';
+}
+
+function snapToWall(furniture) {
+  const pos = furniture.position;
+  const halfW = ROOM_W / 2;
+  const halfD = ROOM_D / 2;
+  const wallThickness = 0.1;
+
+  // Find closest wall
+  const dists = [
+    { d: Math.abs(pos.z + halfD), wall: 'back', z: -halfD + wallThickness / 2 + 0.02, rotY: 0 },
+    { d: Math.abs(pos.x + halfW), wall: 'left', x: -halfW + wallThickness / 2 + 0.02, rotY: Math.PI / 2 },
+    { d: Math.abs(pos.x - halfW), wall: 'right', x: halfW - wallThickness / 2 - 0.02, rotY: -Math.PI / 2 },
+  ];
+
+  dists.sort((a, b) => a.d - b.d);
+  const closest = dists[0];
+
+  if (closest.wall === 'back') {
+    furniture.position.z = closest.z;
+    furniture.rotation.y = furniture.userData.rotation || 0;
+  } else if (closest.wall === 'left') {
+    furniture.position.x = closest.x;
+    furniture.rotation.y = Math.PI / 2;
+  } else {
+    furniture.position.x = closest.x;
+    furniture.rotation.y = -Math.PI / 2;
+  }
+
+  // Clamp to room bounds
+  furniture.position.x = THREE.MathUtils.clamp(furniture.position.x, -halfW + 0.6, halfW - 0.6);
+  furniture.position.z = THREE.MathUtils.clamp(furniture.position.z, -halfD + 0.6, halfD - 0.6);
+
+  // Lift to wall height (centered vertically)
+  if (furniture.name === 'wall-art') {
+    furniture.position.y = 1.4;
+  } else if (furniture.name === 'curtain') {
+    furniture.position.y = 0;
+  }
+}
+
+function addLampLight(furniture) {
+  const marker = furniture.getObjectByName('light-marker');
+  if (!marker) return;
+
+  const worldPos = new THREE.Vector3();
+  marker.getWorldPosition(worldPos);
+
+  const pointLight = new THREE.PointLight('#FFE8C0', 15, 6, 1.5);
+  pointLight.position.copy(worldPos);
+  pointLight.castShadow = true;
+  pointLight.shadow.mapSize.width = 512;
+  pointLight.shadow.mapSize.height = 512;
+  pointLight.shadow.camera.near = 0.1;
+  pointLight.shadow.camera.far = 10;
+  pointLight.shadow.bias = -0.001;
+
+  scene.add(pointLight);
+  lampLights.set(furniture, pointLight);
 }
 
 function removeFurniture(furniture) {
@@ -947,6 +1868,15 @@ function removeFurniture(furniture) {
   if (idx !== -1) {
     placedFurniture.splice(idx, 1);
     scene.remove(furniture);
+
+    // Remove associated lamp light
+    if (lampLights.has(furniture)) {
+      const light = lampLights.get(furniture);
+      scene.remove(light);
+      if (light.shadow) { light.shadow.mapSize?.dispose?.(); }
+      lampLights.delete(furniture);
+    }
+
     disposeObject(furniture);
     updateFurnitureCount();
   }
@@ -954,13 +1884,12 @@ function removeFurniture(furniture) {
 
 function disposeObject(obj) {
   obj.traverse(child => {
-    if (child.geometry && child.geometry !== highlightGeom) {
-      child.geometry.dispose();
-    }
+    if (child.geometry && child.geometry !== highlightGeom) child.geometry.dispose();
     if (child.material) {
       if (Array.isArray(child.material)) {
         child.material.forEach(m => m.dispose());
       } else if (child.material !== highlightMat) {
+        if (child.material.map) child.material.map = null;
         child.material.dispose();
       }
     }
@@ -971,6 +1900,11 @@ function clearAllFurniture() {
   while (placedFurniture.length) {
     const f = placedFurniture.pop();
     scene.remove(f);
+    if (lampLights.has(f)) {
+      const light = lampLights.get(f);
+      scene.remove(light);
+      lampLights.delete(f);
+    }
     disposeObject(f);
   }
   deselectFurniture();
@@ -981,43 +1915,33 @@ function updateFurnitureCount() {
   furnitureCountEl.textContent = placedFurniture.length;
 }
 
-// ==================== Selection ====================
 function selectFurniture(furniture) {
   deselectFurniture();
   selectedFurniture = furniture;
-
-  // Highlight
   highlightMesh.position.copy(furniture.position);
   highlightMesh.position.y = 0.01;
+  highlightMesh.rotation.z = 0;
   highlightMesh.scale.set(
     (furniture.userData.width || 1) * 0.55,
     (furniture.userData.depth || 1) * 0.55,
     1
   );
   highlightMesh.visible = true;
-
   statusText.textContent = `已选中: ${getFurnitureLabel(furniture.name)} | Delete=删除 | R=旋转`;
 }
 
 function deselectFurniture() {
   selectedFurniture = null;
   highlightMesh.visible = false;
-  if (!isPlacing) {
-    statusText.textContent = '✅ 就绪';
-  }
+  if (!isPlacing) statusText.textContent = '✅ 就绪';
 }
 
 function getFurnitureLabel(name) {
   const labels = {
-    'sofa': '沙发',
-    'coffee-table': '茶几',
-    'dining-table': '餐桌',
-    'chair': '椅子',
-    'bed': '床',
-    'bookshelf': '书架',
-    'floor-lamp': '落地灯',
-    'rug': '地毯',
-    'tv-stand': '电视柜',
+    'sofa': '沙发', 'coffee-table': '茶几', 'dining-table': '餐桌',
+    'chair': '椅子', 'bed': '床', 'bookshelf': '书架',
+    'floor-lamp': '落地灯', 'rug': '地毯', 'tv-stand': '电视柜',
+    'plant': '盆栽', 'wall-art': '挂画', 'curtain': '窗帘',
   };
   return labels[name] || name;
 }
@@ -1027,18 +1951,22 @@ container.addEventListener('mousemove', (event) => {
   if (isPlacing && ghostObject) {
     const point = getFloorIntersection(event);
     if (point) {
-      // Clamp to room bounds
-      point.x = THREE.MathUtils.clamp(point.x, -ROOM_W / 2 + 0.3, ROOM_W / 2 - 0.3);
-      point.z = THREE.MathUtils.clamp(point.z, -ROOM_D / 2 + 0.3, ROOM_D / 2 - 0.3);
+      point.x = THREE.MathUtils.clamp(point.x, -ROOM_W / 2 + 0.2, ROOM_W / 2 - 0.2);
+      point.z = THREE.MathUtils.clamp(point.z, -ROOM_D / 2 + 0.2, ROOM_D / 2 - 0.2);
       ghostObject.position.copy(point);
       ghostObject.position.y = 0;
+
+      // Preview wall-mount position
+      if (ghostObject.userData.wallMounted) {
+        snapToWall(ghostObject);
+      }
+
       ghostObject.visible = true;
     } else {
       ghostObject.visible = false;
     }
   }
 
-  // Update tooltip position
   if (isPlacing) {
     tooltip.style.left = event.clientX - container.getBoundingClientRect().left + 'px';
     tooltip.style.bottom = (container.getBoundingClientRect().bottom - event.clientY + 20) + 'px';
@@ -1049,19 +1977,16 @@ container.addEventListener('click', (event) => {
   if (event.target !== renderer.domElement) return;
 
   if (isPlacing) {
-    // Place furniture
     const point = getFloorIntersection(event);
     if (point) {
-      point.x = THREE.MathUtils.clamp(point.x, -ROOM_W / 2 + 0.3, ROOM_W / 2 - 0.3);
-      point.z = THREE.MathUtils.clamp(point.z, -ROOM_D / 2 + 0.3, ROOM_D / 2 - 0.3);
+      point.x = THREE.MathUtils.clamp(point.x, -ROOM_W / 2 + 0.2, ROOM_W / 2 - 0.2);
+      point.z = THREE.MathUtils.clamp(point.z, -ROOM_D / 2 + 0.2, ROOM_D / 2 - 0.2);
       placeFurniture(point);
     }
   } else {
-    // Try to select existing furniture
     const rect = renderer.domElement.getBoundingClientRect();
     mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
     mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
     raycaster.setFromCamera(mouse, camera);
 
     const furnitureMeshes = [];
@@ -1075,10 +2000,7 @@ container.addEventListener('click', (event) => {
     if (intersects.length > 0) {
       const hitMesh = intersects[0].object;
       const found = furnitureMeshes.find(f => f.mesh === hitMesh);
-      if (found) {
-        selectFurniture(found.root);
-        return;
-      }
+      if (found) { selectFurniture(found.root); return; }
     }
     deselectFurniture();
   }
@@ -1086,7 +2008,7 @@ container.addEventListener('click', (event) => {
 
 // Keyboard shortcuts
 window.addEventListener('keydown', (event) => {
-  if (event.target.tagName === 'INPUT') return; // Don't handle when typing in inputs
+  if (event.target.tagName === 'INPUT') return;
 
   switch (event.key.toLowerCase()) {
     case 'escape':
@@ -1100,14 +2022,20 @@ window.addEventListener('keydown', (event) => {
       } else if (selectedFurniture) {
         selectedFurniture.rotation.y = (selectedFurniture.rotation.y + Math.PI / 2) % (Math.PI * 2);
         selectedFurniture.userData.rotation = selectedFurniture.rotation.y;
-        highlightMesh.rotation.z = selectedFurniture.rotation.y;
+        // Update lamp light position if needed
+        if (lampLights.has(selectedFurniture)) {
+          const marker = selectedFurniture.getObjectByName('light-marker');
+          if (marker) {
+            const wp = new THREE.Vector3();
+            marker.getWorldPosition(wp);
+            lampLights.get(selectedFurniture).position.copy(wp);
+          }
+        }
       }
       break;
     case 'delete':
     case 'backspace':
-      if (selectedFurniture) {
-        removeFurniture(selectedFurniture);
-      }
+      if (selectedFurniture) removeFurniture(selectedFurniture);
       break;
     case 'g':
       gridHelper.visible = !gridHelper.visible;
@@ -1116,11 +2044,10 @@ window.addEventListener('keydown', (event) => {
   }
 });
 
-// UI: Furniture grid clicks
+// UI: Furniture grid
 furnitureGrid.addEventListener('click', (event) => {
   const item = event.target.closest('.furniture-item');
   if (!item) return;
-
   const type = item.dataset.type;
   if (activeFurnitureType === type) {
     setActiveFurniture(null);
@@ -1131,13 +2058,48 @@ furnitureGrid.addEventListener('click', (event) => {
 
 // UI: Color pickers
 wallColorInput.addEventListener('input', () => {
-  if (wallMaterial) wallMaterial.color.set(wallColorInput.value);
+  if (wallMaterial) {
+    if (currentWallStyle === 'smooth') wallMaterial.color.set(wallColorInput.value);
+    updateWallMaterial();
+  }
 });
 floorColorInput.addEventListener('input', () => {
-  if (floorMaterial) floorMaterial.color.set(floorColorInput.value);
+  if (floorMaterial && currentFloorStyle === 'solid') {
+    floorMaterial.color.set(floorColorInput.value);
+  }
 });
 ceilingColorInput.addEventListener('input', () => {
   if (ceilingMaterial) ceilingMaterial.color.set(ceilingColorInput.value);
+});
+
+// UI: Floor style toggle
+floorStyleGroup.addEventListener('click', (event) => {
+  const btn = event.target.closest('.style-toggle');
+  if (!btn) return;
+  currentFloorStyle = btn.dataset.style;
+  floorStyleGroup.querySelectorAll('.style-toggle').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (floorMaterial) {
+    updateFloorMaterial();
+    if (currentFloorStyle !== 'solid') {
+      floorMaterial.map.repeat.set(ROOM_W / 1.5, ROOM_D / 1.5);
+    }
+  }
+});
+
+// UI: Wall style toggle
+wallStyleGroup.addEventListener('click', (event) => {
+  const btn = event.target.closest('.style-toggle');
+  if (!btn) return;
+  currentWallStyle = btn.dataset.style;
+  wallStyleGroup.querySelectorAll('.style-toggle').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (wallMaterial) {
+    updateWallMaterial();
+    if (currentWallStyle === 'textured') {
+      wallMaterial.map.repeat.set(ROOM_W / 2, ROOM_H / 2);
+    }
+  }
 });
 
 // UI: Tool buttons
@@ -1151,16 +2113,13 @@ document.getElementById('btn-rotate').addEventListener('click', () => {
 });
 
 document.getElementById('btn-delete').addEventListener('click', () => {
-  if (selectedFurniture) {
-    removeFurniture(selectedFurniture);
-  }
+  if (selectedFurniture) removeFurniture(selectedFurniture);
 });
 
 document.getElementById('btn-grid').addEventListener('click', function() {
   gridHelper.visible = !gridHelper.visible;
   this.classList.toggle('toggle-on', gridHelper.visible);
 });
-// Initialize grid button state
 document.getElementById('btn-grid').classList.add('toggle-on');
 
 document.getElementById('btn-clear').addEventListener('click', () => {
@@ -1170,13 +2129,12 @@ document.getElementById('btn-clear').addEventListener('click', () => {
   }
 });
 
-// ==================== Initialize Scene ====================
+// ==================== Initialize ====================
 createRoom();
 
 // ==================== Animation Loop ====================
 function animate() {
   requestAnimationFrame(animate);
-
   controls.update();
 
   // Pulse highlight
@@ -1185,27 +2143,37 @@ function animate() {
     highlightMesh.material.opacity = 0.5 + pulse * 0.3;
   }
 
+  // Update lamp light positions to follow furniture
+  lampLights.forEach((light, furniture) => {
+    const marker = furniture.getObjectByName('light-marker');
+    if (marker) {
+      const wp = new THREE.Vector3();
+      marker.getWorldPosition(wp);
+      light.position.lerp(wp, 0.5);
+    }
+  });
+
   renderer.render(scene, camera);
 }
 
 animate();
 
-// ==================== Resize Handler ====================
 window.addEventListener('resize', () => {
   camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(container.clientWidth, container.clientHeight);
 });
 
-// ==================== Log ====================
-console.log('🏠 3D Interior Design Studio Ready');
+console.log('🏠 3D Interior Design Studio v2 Ready');
 console.log('  🖱️  Left Click = Place/Select furniture');
 console.log('  🖱️  Right Drag = Rotate view');
 console.log('  🖱️  Scroll = Zoom');
-console.log('  ⌨️  R = Rotate furniture');
-console.log('  ⌨️  Delete = Remove selected');
-console.log('  ⌨️  Esc = Cancel placement');
-console.log('  ⌨️  G = Toggle grid');
+console.log('  ⌨️  R = Rotate | Delete = Remove | Esc = Cancel | G = Grid');
+console.log('  🆕 New: plant, wall-art, curtain furniture');
+console.log('  🆕 New: wood/tile/solid floor styles');
+console.log('  🆕 New: smooth/textured wall styles');
+console.log('  🆕 New: window with glass, door, crown molding');
+console.log('  🆕 New: procedural textures, lamp lighting');
 </script>
 </body>
 </html>
